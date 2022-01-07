@@ -31,6 +31,14 @@ view: users {
     sql: ${age} ;;
   }
 
+
+  measure: age_total_concateneted {
+    type: sum
+    value_format_name: decimal_2
+    sql: ${age} ;;
+    html: {{ rendered_value }} || {{ total_age._rendered_value }} of total>> ;;  ## here we use || to concatenate the values
+  }
+
   measure: average_age {
     type: average
     sql: ${age} ;;
