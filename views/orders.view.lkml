@@ -13,6 +13,11 @@ view: orders {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: idBins {
+    type: number
+    sql: CASE WHEN ${id} < 3000 THEN NULL ELSE ${id} END ;;
+  }
+
   dimension: bigNum {
     type: number
     sql: ${id}*123456789123456 ;;
