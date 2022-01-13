@@ -59,7 +59,9 @@ view: orders {
       week,
       month,
       quarter,
-      year
+      year,
+      month_num,
+      week_of_year
     ]
     sql: ${TABLE}.created_at ;;
   }
