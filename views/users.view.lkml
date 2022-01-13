@@ -72,6 +72,17 @@ view: users {
     sql: ${TABLE}.created_at ;;
   }
 
+  measure: maxDate {
+    type: date_time
+    sql: MAX(${created_time}) ;;
+
+  }
+
+  measure: maxDate2 {
+    type: date_time
+    sql: ADDTIME(${maxDate} , 1.0) ;;
+  }
+
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
