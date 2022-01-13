@@ -45,6 +45,7 @@ view: users {
   }
 
   dimension: city {
+    label: "city"
     type: string
     sql: ${TABLE}.city ;;
   }
@@ -93,6 +94,7 @@ view: users {
   }
 
   dimension: state {
+    label: "state"
     type: string
     sql: ${TABLE}.state ;;
   }
