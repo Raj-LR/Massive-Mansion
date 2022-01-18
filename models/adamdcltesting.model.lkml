@@ -3,6 +3,7 @@ connection: "the_look"
 
 # include all the views
 include: "/views/**/*.view"
+include: "/views/parameter_view.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -25,7 +26,7 @@ persist_with: adamdcltesting_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-
+explore: parameter_view {}
 explore: imgsrc1onerroralert2 {}
 
 explore: billion_orders {
