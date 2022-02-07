@@ -7,12 +7,12 @@ include: "/views/**/*.view"
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
-datagroup: adamdcltesting_default_datagroup {
+datagroup: raj_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
-persist_with: adamdcltesting_default_datagroup
+persist_with: raj_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
@@ -148,23 +148,9 @@ explore: pegdates {}
 
 explore: products {}
 
-explore: saralooker {
-  join: users {
-    type: left_outer
-    sql_on: ${saralooker.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
 
 explore: schema_migrations {}
 
-explore: sindhu {
-  join: users {
-    type: left_outer
-    sql_on: ${sindhu.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
 
 explore: ten_million_orders {
   join: orders {
@@ -180,7 +166,9 @@ explore: ten_million_orders {
   }
 }
 
-explore: test {}
+explore: test {
+  join: xin_test_for_bug2 {}
+}
 
 explore: users {}
 
@@ -192,38 +180,48 @@ explore: user_data {
   }
 }
 
-explore: vvimgsrc1onerroralert2ll {}
+explore: vvimgsrc1onerroralert2ll {
+  hidden: yes
+}
 
-explore: xin_test_for_bug2 {}
+explore: xin_test_for_bug2 {
+  hidden: yes
+}
 
-explore: xss_test {}
+explore: xss_test {
+  hidden: yes
+}
 
-explore: xss_test_1 {}
+explore: xss_test_1 {
+  hidden: yes
+}
 
-explore: xss_test_10 {}
+explore: xss_test_10 {hidden:yes}
 
-explore: xss_test_11 {}
+explore: xss_test_11 {hidden:yes}
 
-explore: xss_test_12 {}
+explore: xss_test_12 {hidden:yes}
 
-explore: xss_test_13 {}
+explore: xss_test_13 {hidden:yes}
 
-explore: xss_test_14 {}
+explore: xss_test_14 {hidden:yes}
 
-explore: xss_test_15 {}
+explore: xss_test_15 {hidden:yes}
 
-explore: xss_test_16 {}
+explore: xss_test_16 {hidden:yes}
 
-explore: xss_test_2 {}
+explore: xss_test_2 {
+  hidden: yes
+}
 
-explore: xss_test_4 {}
+explore: xss_test_4 {hidden:yes}
 
-explore: xss_test_5 {}
+explore: xss_test_5 {hidden:yes}
 
-explore: xss_test_6 {}
+explore: xss_test_6 {hidden:yes}
 
-explore: xss_test_7 {}
+explore: xss_test_7 {hidden:yes}
 
-explore: xss_test_8 {}
+explore: xss_test_8 {hidden:yes}
 
-explore: xss_test_9 {}
+explore: xss_test_9 {hidden:yes}

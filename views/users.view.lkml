@@ -31,10 +31,10 @@ view: users {
     sql: ${age} ;;
   }
 
-  measure: average_age {
-    type: average
-    sql: ${age} ;;
-  }
+  #measure: average_age {
+   # type: number
+  #  sql: avg(${age}) ;;
+  #}
 
   dimension: city {
     type: string
