@@ -31,12 +31,22 @@ view: users {
     sql: ${age} ;;
   }
 
-  #measure: average_age {
-   # type: number
-  #  sql: avg(${age}) ;;
-  #}
+
+measure: average_age {
+    type: number
+    sql: avg(${age}) ;;
+  }
+
+  measure: age_total_concateneted {
+    type: sum
+    value_format_name: decimal_2
+    sql: ${age} ;;
+    html: {{ rendered_value }} || {{ total_age._rendered_value }} of total>> ;;  ## here we use || to concatenate the values
+  }
+
 
   dimension: city {
+    label: "city"
     type: string
     sql: ${TABLE}.city ;;
   }
@@ -64,6 +74,17 @@ view: users {
     sql: ${TABLE}.created_at ;;
   }
 
+  measure: maxDate {
+    type: date_time
+    sql: MAX(${created_time}) ;;
+
+  }
+
+  measure: maxDate2 {
+    type: date_time
+    sql: ADDTIME(${maxDate} , 1.0) ;;
+  }
+
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
@@ -85,6 +106,7 @@ view: users {
   }
 
   dimension: state {
+    label: "state"
     type: string
     sql: ${TABLE}.state ;;
   }

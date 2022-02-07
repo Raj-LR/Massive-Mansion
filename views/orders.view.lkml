@@ -13,6 +13,40 @@ view: orders {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: idBins {
+    type: number
+    sql: CASE WHEN ${id} < 3000 THEN NULL ELSE ${id} END ;;
+  }
+
+  dimension: bigNum {
+    type: number
+    sql: ${id}*123456789123456 ;;
+
+  }
+
+
+  dimension: bigNum2 {
+    type: number
+    sql: ${id}*123456789123456 ;;
+    value_format: "0"
+
+
+  }
+
+  dimension: bigNum3 {
+    type: string
+    sql: ${id}*123456789123456 ;;
+
+  }
+
+  # This is a very basic templated filter
+  filter: templatedFilter {
+    type: string
+  }
+
+
+
+
   # Dates and timestamps can be represented in Looker using a dimension group of type: time.
   # Looker converts dates and timestamps to the specified timeframes within the dimension group.
 
@@ -25,7 +59,9 @@ view: orders {
       week,
       month,
       quarter,
-      year
+      year,
+      month_num,
+      week_of_year
     ]
     sql: ${TABLE}.created_at ;;
   }
