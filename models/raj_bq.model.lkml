@@ -159,11 +159,3 @@ explore: orders_date_string {
     relationship: many_to_one
   }
 }
-
-explore: vijaya_order_test {
-  join: users {
-    type: left_outer
-    sql_on: ${vijaya_order_test.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
