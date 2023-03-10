@@ -43,7 +43,10 @@ view: orders {
     type: count
     drill_fields: [detail*]
   }
-
+  measure: perc_change {
+    type: percent_of_previous
+    sql: ${count} ;;
+  }
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
