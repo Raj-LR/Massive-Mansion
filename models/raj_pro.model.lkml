@@ -1,4 +1,4 @@
-connection: "bigquery"
+connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view"
@@ -11,7 +11,7 @@ datagroup: raj_bq_default_datagroup {
 persist_with: raj_bq_default_datagroup
 
 explore: connection_reg_r3 {}
-
+explore: test_pdt {}
 explore: billion_orders {
   join: orders {
     type: left_outer
