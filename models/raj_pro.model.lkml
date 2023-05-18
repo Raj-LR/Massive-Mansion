@@ -2,7 +2,7 @@ connection: "thelook"
 
 # include all the views
 include: "/views/**/*.view"
-
+include: "/Raj2.dashboard.lookml"
 datagroup: raj_bq_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
