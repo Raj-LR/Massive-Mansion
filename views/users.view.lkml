@@ -67,6 +67,7 @@ view: users {
   user_data.count
   ]
   }
+
   dimension: Raj {
     type: string
     sql: "Raja" ;;
