@@ -68,15 +68,4 @@ view: users {
   ]
   }
 
-  dimension: Raj {
-    type: string
-    sql: "Raja" ;;
-  }
-
-  dimension: Raj2 {
-    type: string
-    sql: "Raja" ;;
-  }
-
-
 }
