@@ -68,4 +68,9 @@ view: users {
   ]
   }
 
+dimension: Raj1 {
+  type: string
+  sql: "RAJA" ;;
+}
+
 }
