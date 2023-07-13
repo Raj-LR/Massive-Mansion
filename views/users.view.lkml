@@ -73,4 +73,16 @@ dimension: Raj1 {
   sql: "RAJA" ;;
 }
 
+  measure: aln_share {
+    type: number
+    sql:
+    {% if Raj1._is_selected or zip._is_selected %}
+    ${count}
+    {% else %}
+    null
+    {% endif %}
+    ;;
+  }
+
+
 }
