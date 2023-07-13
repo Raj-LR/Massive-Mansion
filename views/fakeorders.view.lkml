@@ -18,4 +18,21 @@ view: fakeorders {
     type: count
     drill_fields: [orders.id]
   }
-}
+
+  dimension: conversion_rate {
+      hidden: yes
+      type: number
+      sql: ${TABLE}.conversion_rate ;;
+    }
+  dimension: country {
+      hidden: yes
+      type: string
+      sql: ${TABLE}.country ;;
+    }
+
+  dimension: currency_symbol {
+      hidden: yes
+      sql: ${TABLE}.currency_symbol ;;
+    }
+
+  }
